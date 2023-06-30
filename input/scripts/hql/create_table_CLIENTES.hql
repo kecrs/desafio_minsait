@@ -1,5 +1,5 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS ${TARGET_DATABASE}.clientes (
-        Division           string
+        Address_Number           string
         ,Business_Family         string
         ,Business_Unit           string
         ,Customer                string
@@ -14,7 +14,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ${TARGET_DATABASE}.clientes (
     )
 COMMENT 'Tabela de Clientes'
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY '|'
+FIELDS TERMINATED BY ';'
 STORED AS TEXTFILE
 location '${HDFS_DIR}'
 TBLPROPERTIES ("skip.header.line.count"="1");
