@@ -254,7 +254,7 @@ def criar_csv (df,name):
         .option('sep',';')\
         .save("/datalake/gold/"+name)
     
-    copiar = "hdfs dfs -get /datalake/gold/"+name+"/*.csv /input/gold/"+name+".csv"
+    copiar = "hdfs dfs -get /datalake/gold/"+name+"/*.csv /input/desafio_curso/gold/"+name+".csv"
     
     os.system(copiar)
 
