@@ -239,14 +239,16 @@ ft_vendas = ft_vendas.withColumn("total_amount",regexp_replace("total_amount", '
 
 #Procedimento para gerar os arquivos CSVs
 def criar_csv (df,name):
-    output = "/input/desafio_curso/gold/" + name
-    erase = "hdfs dfs -rm " + output + "/*"
     
-    df.coalesce(1).write        .format('csv')        .option('header',True)        .mode('overwrite')        .option('sep',';')        .save("/datalake/gold/"+name)
+    df.coalesce(1).write\
+        .format('csv')\
+        .option('header',True)\
+        .mode('overwrite')\
+        .option('sep',';')\
+        .save("/datalake/gold/"+name)
     
-    copiar = "hdfs dfs -get /datalake/gold/"+name+"/*.csv /input/desafio_curso/gold/"+name+".csv"
+    copiar = "hdfs dfs -get -f /datalake/gold/"+name+"/*.csv /input/desafio_curso/gold/"+name+".csv"
     
-    os.system(erase)
     os.system(copiar)
     
 #Criando os arquivos csv      
