@@ -158,4 +158,4 @@ Criação da Pasta input/desafio_curso, com a seguinte hierarquia:
 
   
 
-A aplicação existente em /input/desafio_curso/app/Projeto Vendas.pbix é um exemplo básico de utilização de ferramente de BI para criar dashboard para visualização dos dados que foram tratados no projeto.
+A aplicação existente em /input/desafio_curso/app/Projeto.pbix é um exemplo básico de utilização de ferramente de BI para criar dashboard para visualização dos dados que foram tratados no projeto.
