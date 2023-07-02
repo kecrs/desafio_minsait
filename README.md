@@ -126,11 +126,11 @@ Criação da Pasta input/desafio_curso, com a seguinte hierarquia:
 
 * scripts => Pasta que armazena os scripts utilizado no projeto
 
-* hql => Pasta que armazena os scripts .hql para criar as tabelas que armazena os dados do projeto
+	* hql => Pasta que armazena os scripts .hql para criar as tabelas que armazena os dados do projeto
 
-* pre_process => Pasta que armazena os scripts que devem se executados antes de realizar o processamento do projeto
+	* pre_process => Pasta que armazena os scripts que devem se executados antes de realizar o processamento do projeto
 
-* process => Pasta que armazena o script de processamento dos dados
+	* process => Pasta que armazena o script de processamento dos dados
 
   
 
@@ -144,9 +144,9 @@ Criação da Pasta input/desafio_curso, com a seguinte hierarquia:
 
 1. Após startar o ambiente dockerizado, executar a seguinte sequência de scripts:
 
-* Em input/desafio_curso/scripts/pre_process, executar 01_copy_to_hdfs.sh
+	* Em input/desafio_curso/scripts/pre_process, executar 01_copy_to_hdfs.sh
 
-* Em input/desafio_curso/scripts/pre_process, executar 02_prepare_hive.sh
+	* Em input/desafio_curso/scripts/pre_process, executar 02_prepare_hive.sh
 
   
 
