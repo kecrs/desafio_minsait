@@ -102,7 +102,65 @@ para a dimensão tempo considerar o campo da TBL_VENDAS <b>Invoice Date</b>
 
 ## ✅ RESOLUÇÃO
 
-  
+### PROCEDIMENTOS REALIZADOS
+
+Para o desenvolvimento deste desafio foram recebidos 05 arquivos no formato .csv, conforme citado acima, como insumos de entrada para o projeto.
+
+Portanto, essas foram as etapas realizadas:
+
+* Upload dos arquivos para o HDFS do ambiente;
+
+	* Para realização dessa etapa foi implementado o script /input/desafio_curso/scripts/pre_process/01_copy_to_hdfs.sh
+
+* Criação da base de dados e das tabelas dentro do hive para armazenar os dados
+
+	* Para realização dessa etapa foi implementado o script /input/desafio_curso/scripts/pre_process/02_prepare_hive.sh
+
+* Análise dos dados
+
+	* Foi visto que:
+
+		* Cliente.csv
+
+			* Existiam clientes duplicados (customer key: 10021911);
+
+			* Existiam colunas que não eram interessantes para a utilização em uma aplicação de BI, exemplo: "business_unit", "customer_type", "phone" e "regional_sales_mgr";
+
+			* Existiam colunas com os campos em branco ou nulo e que precisariam ser tratadas, conforme solicitação no desafio;
+
+			* Existiam colunas numéricas que estavam sendo identificadas como string.
+
+		* Endereco.csv
+
+			* Existiam colunas que não eram interessantes para utilização em uma aplicação de BI, exemplo: "customer_address_1", "customer_address_2", "customer_address_3", "customer_address_4" e "zip_code";
+
+			* Existiam colunas com os campos em branco ou nulo e que precisariam ser tratadas, conforme solicitação no desafio;
+
+			* Existiam colunas numéricas que estavam sendo identificadas como string.
+
+		* Divisao.csv
+
+			* Os dados são simples e houve apenas a identificação de converter coluna que continha apenas valores numéricos e era do tipo string para o tipo Inteiro.
+
+		* Regiao.csv
+
+			* Os dados são simples e houve apenas a identificação de converter coluna que continha apenas valores numéricos e era do tipo string para o tipo Inteiro.
+
+		* Vendas.csv
+
+			* Existiam colunas com os campos em branco ou nulo e que precisariam ser tratadas, conforme solicitação no desafio;
+
+			* Existiam colunas numéricas que estavam sendo identificadas como string;
+
+			* Existiam colunas de data que estavam sendo identificadas como string;
+
+			* Existiam colunas que não eram interessantes para utilização em uma aplicação de BI, exemplo: 'item_class', 'item_number', 'item', 'line_number' e 'list_price';
+
+* Criação de script, utilizando o jupyter-spark, para que realize todos os tratamentos e processamentos necessários que foram identificados na análise dos dados e demais etapas (/input/desafio_curso/scripts/process/process.py);
+
+* Criação dos arquivos csv para serem utilizados na aplicação em Power BI;
+
+* Criação da aplicação Projeto.pbix  
 
 ### ESTRUTURA DE ARQUIVOS
 
